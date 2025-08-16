@@ -340,7 +340,7 @@ if (!$product) {
         </div>
 
         <!-- Related Products -->
-        <div class="row mt-5">
+        <div class="row mt-4">
             <div class="col">
                 <h3>Produtos Relacionados</h3>
                 <div class="row">
@@ -354,7 +354,7 @@ if (!$product) {
                     <?php foreach ($relatedProducts as $related): ?>
                     <div class="col-md-4 mb-4">
                         <div class="card h-100">
-                            <img src="<?= $related['images'][0]['url'] ?>" class="card-img-top" style="height: 180px; object-fit: contain; background-color: #f8f9fa;" alt="<?= $related['images'][0]['alt'] ?>">
+                            <img src="<?= $related['images'][0]['url'] ?>" class="card-img-top" style="height: 140px; object-fit: contain; background-color: #f8f9fa;" alt="<?= $related['images'][0]['alt'] ?>">
                             <div class="card-body">
                                 <h5 class="card-title"><?= $related['title'] ?></h5>
                                 <p class="card-text text-muted"><?= $related['short_description'] ?></p>

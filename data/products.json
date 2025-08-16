@@ -2,7 +2,7 @@
   "metadata": {
     "version": "1.0",
     "last_updated": "2024-08-16",
-    "total_products": 6,
+    "total_products": 9,
     "total_categories": 6
   },
   "categories": [
@@ -106,6 +106,65 @@
         "total_reviews": 127
       },
       "tags": ["smartphone", "samsung", "5g", "camera", "android"],
+      "created_at": "2024-08-16T10:00:00Z",
+      "updated_at": "2024-08-16T15:30:00Z"
+    },
+    {
+      "id": 8,
+      "sku": "IPHONE-008",
+      "title": "iPhone 15 Pro",
+      "slug": "iphone-15-pro",
+      "short_description": "iPhone 15 Pro com chip A17 Pro e câmera tripla",
+      "full_description": "iPhone 15 Pro com tela Super Retina XDR de 6.1 polegadas, chip A17 Pro, 8GB de RAM e 128GB de armazenamento. Possui câmera tripla com sensor principal de 48MP, câmera frontal de 12MP e bateria de longa duração. Compatível com 5G e carregamento sem fio.",
+      "price": {
+        "current": 6999.99,
+        "original": 7999.99,
+        "currency": "BRL",
+        "discount_percentage": 12
+      },
+      "specifications": {
+        "brand": "Apple",
+        "model": "iPhone 15 Pro",
+        "color": "Titânio Natural",
+        "storage": "128GB",
+        "ram": "8GB",
+        "screen_size": "6.1\"",
+        "screen_type": "Super Retina XDR",
+        "camera_main": "48MP",
+        "camera_front": "12MP",
+        "battery": "Até 23 horas",
+        "processor": "A17 Pro",
+        "os": "iOS 17",
+        "connectivity": ["5G", "Wi-Fi 6E", "Bluetooth 5.3"]
+      },
+      "images": [
+        {
+          "id": 14,
+          "url": "img/iphone.webp",
+          "alt": "iPhone 15 Pro - Vista frontal",
+          "is_primary": true
+        },
+        {
+          "id": 15,
+          "url": "img/iphone2.webp",
+          "alt": "iPhone 15 Pro - Vista traseira",
+          "is_primary": false
+        }
+      ],
+      "category": {
+        "id": 1,
+        "name": "Smartphones",
+        "slug": "smartphones"
+      },
+      "stock": {
+        "quantity": 12,
+        "status": "in_stock"
+      },
+      "ratings": {
+        "average": 4.9,
+        "total_reviews": 156
+      },
+      "tags": ["smartphone", "apple", "iphone", "5g", "camera"],
       "created_at": "2024-08-16T10:00:00Z",
       "updated_at": "2024-08-16T15:30:00Z"
     },
@@ -290,6 +349,67 @@
       "updated_at": "2024-08-16T15:30:00Z"
     },
     {
+      "id": 9,
+      "sku": "SAMSUNGTV-009",
+      "title": "Smart TV Samsung 65\" 4K",
+      "slug": "smart-tv-samsung-65-4k",
+      "short_description": "Smart TV Samsung 65 polegadas com tecnologia QLED",
+      "full_description": "Smart TV Samsung 65 polegadas com tecnologia QLED, resolução 4K Ultra HD, processador Quantum Processor 4K, Tizen OS e HDR10+. Possui 4 portas HDMI, 2 portas USB, Wi-Fi e Bluetooth integrados. Compatível com Netflix, Prime Video e outros serviços de streaming.",
+      "price": {
+        "current": 3999.99,
+        "original": 4799.99,
+        "currency": "BRL",
+        "discount_percentage": 17
+      },
+      "specifications": {
+        "brand": "Samsung",
+        "model": "QN65Q60C",
+        "color": "Preto",
+        "screen_size": "65\"",
+        "resolution": "4K Ultra HD (3840x2160)",
+        "technology": "QLED",
+        "processor": "Quantum Processor 4K",
+        "os": "Tizen OS",
+        "hdr": ["HDR10+", "HLG"],
+        "ports": {
+          "hdmi": 4,
+          "usb": 2
+        },
+        "connectivity": ["Wi-Fi", "Bluetooth", "Ethernet"],
+        "smart_features": ["Netflix", "Prime Video", "YouTube", "Disney+"]
+      },
+      "images": [
+        {
+          "id": 16,
+          "url": "img/tvsamsumg.webp",
+          "alt": "Samsung Smart TV 65\" - Vista frontal",
+          "is_primary": true
+        },
+        {
+          "id": 17,
+          "url": "img/samsumg2.jpeg",
+          "alt": "Samsung Smart TV 65\" - Vista lateral",
+          "is_primary": false
+        }
+      ],
+      "category": {
+        "id": 4,
+        "name": "TVs",
+        "slug": "tvs"
+      },
+      "stock": {
+        "quantity": 8,
+        "status": "in_stock"
+      },
+      "ratings": {
+        "average": 4.8,
+        "total_reviews": 98
+      },
+      "tags": ["tv", "samsung", "qled", "4k", "smart-tv"],
+      "created_at": "2024-08-16T10:00:00Z",
+      "updated_at": "2024-08-16T15:30:00Z"
+    },
+    {
       "id": 5,
       "sku": "CANONR6-005",
       "title": "Câmera Canon EOS R6",
@@ -342,7 +462,58 @@
     },
     {
       "id": 6,
-      "sku": "PS5-006",
+      "sku": "PCGAMER-006",
+      "title": "PC Gamer Completo",
+      "slug": "pc-gamer-completo",
+      "short_description": "PC Gamer montado com componentes de alta performance",
+      "full_description": "PC Gamer completo com processador Intel Core i7, placa de vídeo RTX 4060, 16GB de RAM DDR4, SSD de 500GB e fonte de 600W. Ideal para jogos modernos em alta qualidade e multitarefas. Inclui monitor, teclado e mouse gaming.",
+      "price": {
+        "current": 5499.99,
+        "original": 6499.99,
+        "currency": "BRL",
+        "discount_percentage": 15
+      },
+      "specifications": {
+        "brand": "Custom",
+        "model": "Gaming PC",
+        "color": "Preto",
+        "processor": "Intel Core i7-12700F",
+        "graphics": "NVIDIA RTX 4060 8GB",
+        "ram": "16GB DDR4",
+        "storage": "500GB SSD",
+        "power_supply": "600W 80 Plus",
+        "case": "ATX Mid Tower",
+        "cooling": "Air Cooling",
+        "included": ["Monitor 24\"", "Teclado Gaming", "Mouse Gaming", "Headset"]
+      },
+      "images": [
+        {
+          "id": 12,
+          "url": "img/pcgamer.webp",
+          "alt": "PC Gamer - Vista frontal",
+          "is_primary": true
+        }
+      ],
+      "category": {
+        "id": 2,
+        "name": "Notebooks",
+        "slug": "notebooks"
+      },
+      "stock": {
+        "quantity": 7,
+        "status": "in_stock"
+      },
+      "ratings": {
+        "average": 4.9,
+        "total_reviews": 89
+      },
+      "tags": ["pc", "gamer", "gaming", "rtx", "intel"],
+      "created_at": "2024-08-16T10:00:00Z",
+      "updated_at": "2024-08-16T15:30:00Z"
+    },
+    {
+      "id": 7,
+      "sku": "PS5-007",
       "title": "Console PlayStation 5",
       "slug": "console-playstation-5",
       "short_description": "Console PlayStation 5 com controle DualSense",
@@ -368,7 +539,7 @@
       },
       "images": [
         {
-          "id": 12,
+          "id": 13,
           "url": "img/videogame.jpeg",
           "alt": "PlayStation 5 - Vista frontal",
           "is_primary": true
