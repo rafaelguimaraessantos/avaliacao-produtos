@@ -236,6 +236,15 @@ Este projeto segue padrões de commit semânticos:
 - **[SISTEMA_AVALIACAO.md](SISTEMA_AVALIACAO.md)** - Documentação técnica completa
 - **[DEMONSTRACAO.md](DEMONSTRACAO.md)** - Guia de demonstração passo a passo
 
+## 📋 Respostas Técnicas
+
+Este projeto inclui respostas detalhadas para questões técnicas sobre desenvolvimento web:
+
+- **[conhecimentosGerais.txt](conhecimentosGerais.txt)** - Respostas para teste de conhecimentos gerais
+- **[respostas.txt](respostas.txt)** - Respostas técnicas sobre desenvolvimento web
+
+As respostas abordam temas como acessibilidade, performance, responsividade, segurança, SEO, frameworks vs JavaScript puro, gerenciamento de estado, processos de desenvolvimento e adaptação a mudanças de requisitos.
+
 ## 🎯 Próximas Melhorias
 
 ### **Funcionalidades Futuras**

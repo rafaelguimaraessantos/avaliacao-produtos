@@ -1,0 +1,179 @@
+Teste Aberto: Conhecimentos Gerais
+1. Para garantir acessibilidade, sigo as diretrizes da WCAG (Web Content Accessibility Guidelines). Práticas incluem:
+
+Uso correto de semântica HTML (<header>, <nav>, <main>, <button>, etc.) para que leitores de tela interpretem corretamente.
+
+Textos alternativos em imagens via alt.
+
+Contraste de cores adequado entre texto e fundo para garantir legibilidade.
+
+Navegação via teclado: todos os elementos interativos devem ser acessíveis com Tab, Enter, Esc, etc.
+
+Uso de ARIA (Accessible Rich Internet Applications) para descrever elementos dinâmicos como modais ou sliders.
+
+Evitar dependência apenas de cor para transmitir informações.
+
+Testes com ferramentas como Axe, Lighthouse, ou leitores de tela (NVDA, VoiceOver).
+
+2. Front-end:
+
+Minificação e compressão de CSS, JS e HTML.
+
+Lazy loading de imagens e módulos JS.
+
+Uso de CDNs para bibliotecas e recursos estáticos.
+
+Pré-carregamento (preload) e cache inteligente (Cache-Control, Service Workers).
+
+Redução do uso de bibliotecas pesadas desnecessárias.
+
+Back-end:
+
+Gzip ou Brotli para compressão de respostas.
+
+Redução do tempo de resposta do servidor (otimização de consultas SQL, uso de cache - Redis, etc.).
+
+Uso de APIs paginadas e com filtros.
+
+Implementação de SSR (Server-Side Rendering) em SPAs, quando aplicável, para melhorar TTFB.
+
+Ferramentas: Lighthouse, WebPageTest, Chrome DevTools, GTmetrix.
+
+3. Uso de media queries (@media) para adaptar layout a diferentes tamanhos de tela.
+
+Grid e Flexbox para layouts fluidos.
+
+Imagens adaptativas com srcset e sizes, e formatos modernos como WebP ou AVIF.
+
+Tipografia responsiva com rem, em e clamp() para tamanhos adaptáveis.
+
+Mobile-first approach: desenvolvimento com foco inicial em dispositivos móveis e adaptação progressiva para telas maiores.
+
+Testes em diferentes dispositivos e uso de ferramentas como o modo responsivo do DevTools.
+
+4. Escapar/limpar entradas de usuário para prevenir XSS.
+
+Uso de Content Security Policy (CSP) para restringir fontes de scripts.
+
+Proteção contra CSRF via tokens únicos em formulários (CSRF tokens).
+
+Armazenamento seguro de dados no front-end (evitar armazenar tokens sensíveis em localStorage, preferir httpOnly cookies).
+
+Validação tanto no cliente quanto no servidor.
+
+Evitar eval() ou construção dinâmica de código.
+
+5. Uso de HTML semântico: títulos com <h1> a <h6>, listas com <ul>, <ol>, etc.
+
+URLs amigáveis e bem estruturadas.
+
+Uso correto de meta tags, como meta description, title, robots, og:* (Open Graph).
+
+Renderização no lado do servidor (SSR) para SPAs com frameworks como Next.js, para garantir indexação adequada.
+
+Lazy loading inteligente com loading="lazy", mas com fallback para conteúdo crítico visível ao SEO crawler.
+
+Sitemap.xml e robots.txt bem configurados.
+
+Melhoria da performance (carregamento rápido é critério de ranqueamento).
+
+6. Frameworks/Bibliotecas (React, Vue, Angular): Prós:
+
+Produtividade e escalabilidade.
+
+Comunidade ativa e grande ecossistema.
+
+Componentização reutilizável.
+
+Ferramentas modernas (roteamento, estado, SSR).
+
+Contras:
+
+Curva de aprendizado.
+
+Tamanho do bundle maior.
+
+Overhead em projetos simples.
+
+Vanilla JS:
+Prós:
+
+Leve, sem dependências.
+
+Ideal para projetos pequenos ou páginas estáticas.
+
+Total controle do código.
+
+Contras:
+
+Menor produtividade em projetos complexos.
+
+Mais código repetitivo.
+
+Quando usar:
+
+Frameworks: projetos escaláveis, SPAs, time grande, manutenção contínua.
+
+Vanilla JS: sites institucionais simples, baixa complexidade.
+
+7. É fundamental para manter consistência entre componentes, especialmente com dados compartilhados (usuário, carrinho, autenticação).
+
+Ferramentas/Abordagens:
+
+Context API (React) para estado global leve.
+
+Redux, Zustand, Pinia (Vue) para estados complexos.
+
+Persistência de estado com localStorage, sessionStorage ou IndexedDB.
+
+Gerenciamento assíncrono com middlewares como Redux Thunk ou Saga.
+
+Boas práticas:
+
+Manter o estado centralizado, mas modularizado.
+
+Usar selectors/memoization para otimizar re-renderizações.
+
+Evitar armazenar tudo no estado global (usar local state onde for possível).
+
+8. Planejamento:
+
+Levantamento de requisitos.
+
+Wireframes, protótipos e escolha de tecnologias.
+
+Desenvolvimento:
+
+Configuração de ambiente (Git, Linter, CI/CD).
+
+Codificação modular e versionada.
+
+Testes:
+
+Unitários (Jest, Vitest), integração (Testing Library), end-to-end (Cypress).
+
+Build e Deploy:
+
+Transpilar com Webpack/Vite.
+
+Deploy em serviços como Vercel, Netlify, ou servidores com Docker.
+
+Setup de pipelines CI/CD (GitHub Actions, GitLab CI).
+
+Monitoramento e Manutenção:
+
+Logs, alertas e rastreamento de erros (Sentry).
+
+Atualizações e otimizações contínuas.
+
+9. Adoto uma abordagem ágil, com ciclos curtos de entrega (sprints).
+
+Documentação leve para facilitar alterações futuras.
+
+Uso de feature flags para liberar mudanças progressivamente.
+
+Estrutura de código modular e desacoplada, facilitando alterações.
+
+Feedback contínuo do usuário e testes A/B.
+
+Comunicação com stakeholders para realinhar expectativas e priorizações.

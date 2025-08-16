@@ -1,0 +1,96 @@
+1- Diagnóstico e Identificação das Causas
+
+Antes de sair otimizando, é essencial entender onde estão os gargalos.
+As principais ações seriam:
+
+Ferramentas de análise:
+
+Google Lighthouse / PageSpeed Insights → gera relatório sobre performance, acessibilidade, SEO e boas práticas, destacando problemas específicos no mobile.
+
+WebPageTest → mede carregamento por etapas e identifica recursos mais pesados.
+
+Chrome DevTools (modo Throttle) → simula redes lentas (3G/4G) e dispositivos móveis.
+
+Hotjar / Clarity → mapas de calor e gravações para ver como os usuários interagem e onde têm dificuldades.
+
+Aspectos a investigar:
+
+Tamanho de imagens, fontes e scripts que atrasam o carregamento.
+
+Quantidade de requisições HTTP e uso de bibliotecas pesadas.
+
+Layouts mal adaptados a telas pequenas (elementos muito próximos, botões pequenos, textos ilegíveis).
+
+Bloqueios de renderização por CSS/JS mal otimizados.
+
+Testes reais em dispositivos de diferentes faixas (low-end, mid-end e high-end).
+
+2- Estratégias e Ferramentas para Otimizar Performance no Mobile
+
+Aqui entram as boas práticas de web performance:
+
+Otimização de recursos:
+
+Imagens em formato moderno (WebP/AVIF) + lazy loading.
+
+Compactar e minificar CSS, JS e HTML.
+
+Usar CDN para entregar conteúdo de forma mais rápida.
+
+Remover bibliotecas pesadas não utilizadas (por exemplo, trocar jQuery + plugins por JS nativo ou libs mais leves).
+
+Dividir JS em chunks (code splitting) e carregar apenas o necessário.
+
+Melhoria de tempo de resposta:
+
+Cache (HTTP cache e Service Workers com PWA).
+
+Pré-carregamento (preload, prefetch) de recursos importantes.
+
+Evitar requisições síncronas e otimizar consultas ao backend.
+
+Ferramentas de apoio:
+
+Lighthouse para benchmark contínuo.
+
+Webpack/Rollup/Parcel para otimizar bundling de assets.
+
+Cloudflare / Vercel / Netlify para entrega rápida e otimização automática.
+
+3- Melhoria da Usabilidade no Mobile
+
+Aqui a ideia é deixar a experiência fluida, sem frustrações:
+
+Design responsivo aprimorado:
+
+Aplicar Mobile First no design → pensar primeiro na tela pequena.
+
+Botões e links grandes o suficiente para o toque (mínimo 44px recomendado pela Apple).
+
+Espaçamento adequado entre elementos (evitar cliques acidentais).
+
+Fontes legíveis sem zoom.
+
+Interações simplificadas:
+
+Reduzir quantidade de cliques para concluir ações (ex: checkout rápido).
+
+Menus colapsáveis, mas fáceis de abrir/fechar.
+
+Auto-fill e integração com recursos do sistema (ex: salvar cartão, login com Google/Apple).
+
+Feedback claro ao usuário:
+
+Loaders e skeleton screens para páginas pesadas.
+
+Mensagens claras de erro e sucesso.
+
+Navegação consistente (não mudar padrões de UI esperados no mobile).
+
+Testes com usuários reais:
+
+A/B Testing de layouts no mobile.
+
+Pesquisar onde ocorrem desistências (ex: no checkout).
+
+Usar métricas como Core Web Vitals (LCP, FID, CLS) para validar usabilidade.
