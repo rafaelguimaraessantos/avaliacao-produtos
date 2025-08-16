@@ -208,7 +208,7 @@ if (!$product) {
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.php">Produtos</a></li>
-                <li class="breadcrumb-item"><a href="index.php"><?= $product['category'] ?></a></li>
+                <li class="breadcrumb-item"><a href="index.php"><?= $product['category']['name'] ?></a></li>
                 <li class="breadcrumb-item active" aria-current="page"><?= $product['title'] ?></li>
             </ol>
         </nav>
