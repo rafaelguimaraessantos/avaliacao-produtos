@@ -88,8 +88,8 @@ $products = $data['products'];
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <div class="rating">
                                 <i class="fas fa-star text-warning"></i>
-                                <span class="ms-1"><?= $product['ratings']['average'] ?></span>
-                                <span class="text-muted">(<?= $product['ratings']['total_reviews'] ?>)</span>
+                                <span class="ms-1 product-rating-average"><?= $product['ratings']['average'] ?></span>
+                                <span class="text-muted">(<span class="product-rating-count"><?= $product['ratings']['total_reviews'] ?></span>)</span>
                             </div>
                             <div class="stock-status">
                                 <?php if ($product['stock']['quantity'] > 0): ?>
@@ -160,6 +160,7 @@ $products = $data['products'];
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/product-list-rating.js"></script>
     <script>
         // Função de busca em tempo real
         document.getElementById('searchInput').addEventListener('input', function() {

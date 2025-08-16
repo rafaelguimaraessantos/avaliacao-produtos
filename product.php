@@ -126,10 +126,10 @@ if (!$product) {
                 <div class="d-flex align-items-center mb-4">
                     <div class="rating me-3">
                         <i class="fas fa-star text-warning"></i>
-                        <span class="ms-1 fw-bold"><?= $product['ratings']['average'] ?></span>
-                        <span class="text-muted">(<?= $product['ratings']['total_reviews'] ?> avaliações)</span>
+                        <span class="ms-1 fw-bold product-rating-average"><?= $product['ratings']['average'] ?></span>
+                        <span class="text-muted">(<span class="product-rating-count"><?= $product['ratings']['total_reviews'] ?></span> avaliações)</span>
                     </div>
-                    <div class="stock-status">
+                    <div class="stock-status product-detail-stock">
                         <?php if ($product['stock']['quantity'] > 0): ?>
                         <span class="badge bg-success">Em estoque (<?= $product['stock']['quantity'] ?> unidades)</span>
                         <?php else: ?>
@@ -157,6 +157,62 @@ if (!$product) {
                             <?php endif; ?>
                         </div>
                         <?php endforeach; ?>
+                    </div>
+                </div>
+
+                <!-- Sistema de Avaliação -->
+                <div class="mb-4">
+                    <h5>Avaliações do Produto</h5>
+                    
+                    <!-- Média das Avaliações -->
+                    <div class="rating-summary mb-3">
+                        <div class="d-flex align-items-center">
+                            <div class="average-rating me-3">
+                                <span class="average-score fs-2 fw-bold text-warning dynamic-data"><?= $product['ratings']['average'] ?></span>
+                                <span class="text-muted">/ 5</span>
+                                <span class="live-indicator"></span>
+                            </div>
+                            <div class="stars-display">
+                                <div class="stars-container" data-rating="<?= $product['ratings']['average'] ?>">
+                                    <i class="fas fa-star star-icon" data-value="1"></i>
+                                    <i class="fas fa-star star-icon" data-value="2"></i>
+                                    <i class="fas fa-star star-icon" data-value="3"></i>
+                                    <i class="fas fa-star star-icon" data-value="4"></i>
+                                    <i class="fas fa-star star-icon" data-value="5"></i>
+                                </div>
+                            </div>
+                            <div class="total-reviews ms-3">
+                                <span class="text-muted">(<?= $product['ratings']['total_reviews'] ?> avaliações)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interface de Avaliação -->
+                    <div class="rating-interface mb-3">
+                        <h6>Deixe sua avaliação:</h6>
+                        <div class="rating-stars">
+                            <div class="stars-input" data-product-id="<?= $product['id'] ?>">
+                                <i class="fas fa-star star-input" data-value="1"></i>
+                                <i class="fas fa-star star-input" data-value="2"></i>
+                                <i class="fas fa-star star-input" data-value="3"></i>
+                                <i class="fas fa-star star-input" data-value="4"></i>
+                                <i class="fas fa-star star-input" data-value="5"></i>
+                            </div>
+                            <div class="rating-text mt-2">
+                                <span class="rating-label text-muted">Clique nas estrelas para avaliar</span>
+                            </div>
+                        </div>
+                        <button id="submitRating" class="btn btn-primary btn-sm mt-2" style="display: none;">
+                            <i class="fas fa-paper-plane me-1"></i>Enviar Avaliação
+                        </button>
+                    </div>
+
+                    <!-- Lista de Avaliações -->
+                    <div class="reviews-list">
+                        <h6>Últimas Avaliações:</h6>
+                        <div id="reviewsContainer" class="reviews-container">
+                            <!-- As avaliações serão carregadas via JavaScript -->
+                        </div>
                     </div>
                 </div>
                 
@@ -275,7 +331,9 @@ if (!$product) {
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/rating-system.js"></script>
     <script>
+        // ===== SISTEMA DE GALERIA DE IMAGENS =====
         let currentImageIndex = 0;
         const images = <?= json_encode(array_column($product['images'], 'url')) ?>;
         const totalImages = images.length;
@@ -324,6 +382,15 @@ if (!$product) {
                 changeImage(1);
             }, 5000);
         }
+
+        // ===== INICIALIZAR SISTEMA DE AVALIAÇÃO =====
+        document.addEventListener('DOMContentLoaded', function() {
+            initProductRatingSystem(
+                <?= $product['id'] ?>, 
+                <?= $product['ratings']['average'] ?>, 
+                <?= $product['ratings']['total_reviews'] ?>
+            );
+        });
     </script>
 </body>
 </html>

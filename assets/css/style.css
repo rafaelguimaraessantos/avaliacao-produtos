@@ -222,3 +222,328 @@
     object-fit: contain;
     background-color: #f8f9fa;
 }
+
+/* Sistema de Avaliação */
+.rating-summary {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.stars-container {
+    display: inline-flex;
+    gap: 2px;
+}
+
+.star-icon {
+    font-size: 1.2rem;
+    color: #dee2e6;
+    transition: color 0.3s ease;
+}
+
+.star-icon.filled {
+    color: #ffc107;
+}
+
+.stars-input {
+    display: inline-flex;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.star-input {
+    font-size: 1.5rem;
+    color: #dee2e6;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.star-input:hover,
+.star-input.active {
+    color: #ffc107;
+    transform: scale(1.1);
+}
+
+.rating-interface {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.rating-text {
+    min-height: 20px;
+}
+
+.rating-label {
+    font-size: 0.9rem;
+}
+
+.reviews-container {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.review-item {
+    background: #f8f9fa;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #007bff;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.review-stars {
+    display: flex;
+    gap: 2px;
+}
+
+.review-star {
+    font-size: 0.9rem;
+    color: #ffc107;
+}
+
+.review-date {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.review-text {
+    font-size: 0.9rem;
+    color: #495057;
+    margin: 0;
+}
+
+.no-reviews {
+    text-align: center;
+    color: #6c757d;
+    font-style: italic;
+    padding: 2rem;
+}
+
+/* Animações para as estrelas */
+@keyframes starPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.star-input.animate {
+    animation: starPulse 0.3s ease;
+}
+
+/* Responsividade para avaliações */
+@media (max-width: 768px) {
+    .rating-summary .d-flex {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+    
+    .average-rating {
+        margin-bottom: 0.5rem;
+    }
+    
+    .stars-input {
+        gap: 2px;
+    }
+    
+    .star-input {
+        font-size: 1.3rem;
+    }
+}
+
+/* Sistema de Notificações */
+.alert {
+    border-radius: 8px;
+    border: none;
+    font-weight: 500;
+}
+
+.alert-info {
+    background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+    color: white;
+}
+
+.alert-success {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+}
+
+.alert-warning {
+    background: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%);
+    color: #212529;
+}
+
+.alert-danger {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    color: white;
+}
+
+/* Animações para notificações */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.alert {
+    animation: slideInRight 0.3s ease-out;
+}
+
+/* Indicador de atualização em tempo real */
+.live-indicator {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #28a745;
+    border-radius: 50%;
+    margin-left: 8px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(40, 167, 69, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+    }
+}
+
+/* Estilo para dados dinâmicos */
+.dynamic-data {
+    position: relative;
+}
+
+.dynamic-data::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 6px;
+    height: 6px;
+    background-color: #28a745;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+/* Melhorias no sistema de avaliação */
+.rating-summary {
+    position: relative;
+    overflow: hidden;
+}
+
+.rating-summary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Estilo para estoque dinâmico */
+.stock-status .badge {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.stock-status .badge:hover {
+    transform: scale(1.05);
+}
+
+.stock-status .badge.bg-success {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%) !important;
+}
+
+.stock-status .badge.bg-secondary {
+    background: linear-gradient(135deg, #6c757d 0%, #495057 100%) !important;
+}
+
+/* Efeito de atualização dinâmica */
+.product-rating-average,
+.product-rating-count {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.product-rating-average.updated,
+.product-rating-count.updated {
+    animation: updateHighlight 0.6s ease;
+}
+
+@keyframes updateHighlight {
+    0% {
+        background-color: rgba(255, 193, 7, 0.3);
+        transform: scale(1);
+    }
+    50% {
+        background-color: rgba(255, 193, 7, 0.6);
+        transform: scale(1.1);
+    }
+    100% {
+        background-color: transparent;
+        transform: scale(1);
+    }
+}
+
+/* Indicador de sincronização */
+.sync-indicator {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: #28a745;
+    border-radius: 50%;
+    margin-left: 4px;
+    animation: syncPulse 2s infinite;
+}
+
+@keyframes syncPulse {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Melhoria na responsividade */
+@media (max-width: 768px) {
+    .product-rating-average,
+    .product-rating-count {
+        font-size: 0.9rem;
+    }
+    
+    .sync-indicator {
+        width: 4px;
+        height: 4px;
+    }
+}
