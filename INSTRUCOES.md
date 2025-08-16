@@ -1,6 +1,6 @@
-# 📋 Instruções de Uso - TechStore
+# Instruções de Uso - TechStore
 
-## 🚀 Como Executar o Projeto
+## Como Executar o Projeto
 
 ### 1. Iniciar o Projeto
 ```bash
@@ -26,7 +26,7 @@ sudo docker compose down
 sudo docker compose down -v
 ```
 
-## 🔧 Comandos Úteis
+## Comandos Úteis
 
 ### Docker
 ```bash
@@ -58,21 +58,21 @@ git commit -m "tipo: descrição da mudança"
 # chore: manutenção
 ```
 
-## 📱 Funcionalidades Testadas
+## Funcionalidades Testadas
 
 ### Página de Listagem
-- ✅ Grid responsivo de produtos
-- ✅ Busca em tempo real
-- ✅ Navegação para detalhes
-- ✅ Animações CSS
+- Grid responsivo de produtos
+- Busca em tempo real
+- Navegação para detalhes
+- Animações CSS
 
 ### Página de Detalhes
-- ✅ Slider de imagens
-- ✅ Navegação por teclado
-- ✅ Produtos relacionados
-- ✅ Breadcrumbs
+- Slider de imagens
+- Navegação por teclado
+- Produtos relacionados
+- Breadcrumbs
 
-## 🐛 Solução de Problemas
+## Solução de Problemas
 
 ### Erro de Permissão Docker
 ```bash
@@ -98,26 +98,26 @@ sudo docker compose logs web
 sudo docker compose up -d --build
 ```
 
-## 📝 Próximos Passos
+## Próximos Passos
 
-1. **Melhorias Sugeridas:**
+1. Melhorias Sugeridas:
    - Adicionar sistema de carrinho
    - Implementar filtros por categoria
    - Adicionar sistema de avaliações
    - Implementar paginação
 
-2. **Funcionalidades Avançadas:**
+2. Funcionalidades Avançadas:
    - Sistema de login
    - Banco de dados MySQL
    - API REST
    - Sistema de pagamentos
 
-## 🎯 Status do Projeto
+## Status do Projeto
 
-- ✅ **Estrutura básica implementada**
-- ✅ **Docker configurado**
-- ✅ **Páginas funcionais**
-- ✅ **Design responsivo**
-- ✅ **Documentação completa**
+- Estrutura básica implementada
+- Docker configurado
+- Páginas funcionais
+- Design responsivo
+- Documentação completa
 
-O projeto está **PRONTO PARA USO**! 🎉
+O projeto está pronto para uso!

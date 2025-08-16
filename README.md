@@ -2,7 +2,7 @@
 
 Um projeto de e-commerce simples desenvolvido em PHP com interface responsiva usando Bootstrap.
 
-## 🚀 Funcionalidades
+## Funcionalidades
 
 - **Listagem de Produtos**: Grid responsivo com cards de produtos
 - **Busca em Tempo Real**: Filtro de produtos por título e categoria
@@ -10,7 +10,7 @@ Um projeto de e-commerce simples desenvolvido em PHP com interface responsiva us
 - **Design Responsivo**: Interface adaptável para desktop e mobile
 - **Navegação Intuitiva**: Breadcrumbs e navegação clara
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - **Backend**: PHP 8.2
 - **Frontend**: HTML5, CSS3, JavaScript
@@ -19,7 +19,7 @@ Um projeto de e-commerce simples desenvolvido em PHP com interface responsiva us
 - **Containerização**: Docker & Docker Compose
 - **Dados**: JSON estático
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 listagem-produtos/
@@ -32,7 +32,7 @@ listagem-produtos/
 └── README.md                # Documentação
 ```
 
-## 🚀 Como Executar
+## Como Executar
 
 ### Pré-requisitos
 - Docker
@@ -56,46 +56,46 @@ listagem-produtos/
    http://localhost:8080
    ```
 
-## 📋 Funcionalidades Implementadas
+## Funcionalidades Implementadas
 
-### Página de Listagem (`index.php`)
-- ✅ Grid responsivo de produtos
-- ✅ Busca em tempo real por título e categoria
-- ✅ Cards com imagem, título, descrição e preço
-- ✅ Botão "Ver Mais" para cada produto
-- ✅ Animações CSS suaves
-- ✅ Design moderno com Bootstrap
+### Página de Listagem (index.php)
+- Grid responsivo de produtos
+- Busca em tempo real por título e categoria
+- Cards com imagem, título, descrição e preço
+- Botão "Ver Mais" para cada produto
+- Animações CSS suaves
+- Design moderno com Bootstrap
 
-### Página de Detalhes (`product.php`)
-- ✅ Informações completas do produto
-- ✅ Slider de imagens com navegação
-- ✅ Thumbnails para seleção de imagens
-- ✅ Navegação por teclado (setas)
-- ✅ Auto-play do slider
-- ✅ Produtos relacionados
-- ✅ Breadcrumbs para navegação
+### Página de Detalhes (product.php)
+- Informações completas do produto
+- Slider de imagens com navegação
+- Thumbnails para seleção de imagens
+- Navegação por teclado (setas)
+- Auto-play do slider
+- Produtos relacionados
+- Breadcrumbs para navegação
 
-### Dados (`data/products.json`)
-- ✅ 6 produtos de exemplo
-- ✅ Múltiplas imagens por produto
-- ✅ Categorias organizadas
-- ✅ Preços formatados
+### Dados (data/products.json)
+- 6 produtos de exemplo
+- Múltiplas imagens por produto
+- Categorias organizadas
+- Preços formatados
 
-## 🎨 Características do Design
+## Características do Design
 
 - **Responsivo**: Adaptável a diferentes tamanhos de tela
 - **Moderno**: Interface limpa e profissional
 - **Interativo**: Animações e transições suaves
 - **Acessível**: Navegação por teclado e semântica HTML
 
-## 🔧 Configurações Docker
+## Configurações Docker
 
 O projeto utiliza:
 - **PHP 8.2** com Apache
 - **Porta 8080** para acesso
 - **Volume montado** para desenvolvimento em tempo real
 
-## 📝 Padrões de Commit
+## Padrões de Commit
 
 Este projeto segue padrões de commit semânticos:
 - `feat:` Nova funcionalidade
@@ -106,7 +106,7 @@ Este projeto segue padrões de commit semânticos:
 - `test:` Testes
 - `chore:` Tarefas de manutenção
 
-## 🤝 Contribuição
+## Contribuição
 
 1. Faça um fork do projeto
 2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
@@ -114,10 +114,10 @@ Este projeto segue padrões de commit semânticos:
 4. Push para a branch (`git push origin feature/AmazingFeature`)
 5. Abra um Pull Request
 
-## 📄 Licença
+## Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
 
-## 👨‍💻 Autor
+## Autor
 
 Desenvolvido como projeto de estudo em PHP e desenvolvimento web.
