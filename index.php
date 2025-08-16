@@ -31,6 +31,17 @@ $products = $data['products'];
             padding: 2rem 0;
             margin-bottom: 2rem;
         }
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+            transform: translateY(-2px);
+        }
         .price {
             font-size: 1.25rem;
             font-weight: bold;
@@ -41,6 +52,10 @@ $products = $data['products'];
             top: 10px;
             right: 10px;
             z-index: 1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .footer {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
     </style>
 </head>
@@ -126,7 +141,7 @@ $products = $data['products'];
     </div>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-4 mt-5">
+    <footer class="footer text-white py-4 mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
