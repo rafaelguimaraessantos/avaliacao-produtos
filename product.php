@@ -36,148 +36,7 @@ if (!$product) {
     <title><?= $product['title'] ?> - TechStore</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        .product-image {
-            max-height: 400px;
-            object-fit: contain;
-            width: 100%;
-            background-color: #f8f9fa;
-        }
-        .thumbnail {
-            height: 80px;
-            object-fit: contain;
-            cursor: pointer;
-            border: 2px solid transparent;
-            transition: border-color 0.3s ease;
-            background-color: #f8f9fa;
-        }
-        .thumbnail.active {
-            border-color: #007bff;
-        }
-        .price {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #28a745;
-        }
-        .specs-list {
-            list-style: none;
-            padding: 0;
-        }
-        .specs-list li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #eee;
-        }
-        .specs-list li:last-child {
-            border-bottom: none;
-        }
-        .specs-list i {
-            color: #007bff;
-            margin-right: 0.5rem;
-        }
-        .breadcrumb-item + .breadcrumb-item::before {
-            content: ">";
-        }
-        .product-gallery {
-            position: relative;
-        }
-        .gallery-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0,0,0,0.5);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-        .gallery-nav:hover {
-            background: rgba(0,0,0,0.7);
-        }
-        .gallery-nav.prev {
-            left: 10px;
-        }
-        .gallery-nav.next {
-            right: 10px;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border: none;
-        }
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
-            transform: translateY(-2px);
-        }
-        .footer {
-            background: linear-gradient(135deg, rgb(9, 23, 87) 0%, rgb(64, 53, 75) 100%);
-        }
-        .payment-methods {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            justify-content: center;
-        }
-        .payment-item {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            padding: 3px 8px;
-            border-radius: 15px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            background: rgba(255, 255, 255, 0.1);
-            font-size: 0.75rem;
-        }
-        .payment-item:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-1px);
-        }
-        .payment-item img {
-            width: 40px;
-            height: 25px;
-            object-fit: contain;
-            transition: transform 0.3s ease;
-        }
-        .payment-item:hover img {
-            transform: scale(1.1);
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-        .text-blue {
-            color: #007bff !important;
-        }
-        .current-price {
-            color: #28a745;
-            font-weight: bold;
-        }
-        .original-price {
-            font-size: 0.9em;
-        }
-        .specs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
-            margin-top: 15px;
-        }
-        .spec-item {
-            padding: 8px;
-            background: #f8f9fa;
-            border-radius: 5px;
-            font-size: 0.9rem;
-        }
-        .tags .badge {
-            font-size: 0.8rem;
-        }
-    </style>
+    <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
@@ -220,7 +79,7 @@ if (!$product) {
             <!-- Product Images -->
             <div class="col-lg-6 mb-4">
                 <div class="product-gallery">
-                    <img id="mainImage" src="<?= $product['images'][0]['url'] ?>" class="product-image rounded" alt="<?= $product['images'][0]['alt'] ?>">
+                    <img id="mainImage" src="<?= $product['images'][0]['url'] ?>" class="product-detail-image rounded" alt="<?= $product['images'][0]['alt'] ?>">
                     
                     <?php if (count($product['images']) > 1): ?>
                     <button class="gallery-nav prev" onclick="changeImage(-1)">
@@ -257,7 +116,7 @@ if (!$product) {
                 
                 <h1 class="mb-3"><?= $product['title'] ?></h1>
                 
-                <div class="price mb-4">
+                <div class="product-detail-price mb-4">
                     <span class="current-price fs-1">R$ <?= number_format($product['price']['current'], 2, ',', '.') ?></span>
                     <?php if ($product['price']['discount_percentage'] > 0): ?>
                     <div class="original-price text-muted text-decoration-line-through">R$ <?= number_format($product['price']['original'], 2, ',', '.') ?></div>
@@ -354,7 +213,7 @@ if (!$product) {
                     <?php foreach ($relatedProducts as $related): ?>
                     <div class="col-md-4 mb-4">
                         <div class="card h-100">
-                            <img src="<?= $related['images'][0]['url'] ?>" class="card-img-top" style="height: 140px; object-fit: contain; background-color: #f8f9fa;" alt="<?= $related['images'][0]['alt'] ?>">
+                            <img src="<?= $related['images'][0]['url'] ?>" class="card-img-top related-product-image" alt="<?= $related['images'][0]['alt'] ?>">
                             <div class="card-body">
                                 <h5 class="card-title"><?= $related['title'] ?></h5>
                                 <p class="card-text text-muted"><?= $related['short_description'] ?></p>

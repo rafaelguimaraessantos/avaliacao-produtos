@@ -1,0 +1,224 @@
+/* Estilos Gerais */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.product-image {
+    height: 180px;
+    object-fit: contain;
+    background-color: #f8f9fa;
+}
+
+/* Página de Detalhes do Produto */
+.product-detail-image {
+    max-height: 400px;
+    object-fit: contain;
+    width: 100%;
+    background-color: #f8f9fa;
+}
+
+.thumbnail {
+    height: 80px;
+    object-fit: contain;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+.thumbnail.active {
+    border-color: #007bff;
+}
+
+/* Seção de Busca */
+.search-container {
+    background: linear-gradient(135deg,rgb(9, 23, 87) 0%,rgb(64, 53, 75) 100%);
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+/* Botões */
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+    transform: translateY(-2px);
+}
+
+/* Preços */
+.price {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #28a745;
+}
+
+.product-detail-price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #28a745;
+}
+
+.current-price {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.original-price {
+    font-size: 0.9em;
+}
+
+/* Badges */
+.category-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, rgb(9, 23, 87) 0%, rgb(64, 53, 75) 100%);
+}
+
+/* Formas de Pagamento */
+.payment-methods {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.payment-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.1);
+    font-size: 0.75rem;
+}
+
+.payment-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.payment-item img {
+    width: 40px;
+    height: 25px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.payment-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Animações */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Cores */
+.text-blue {
+    color: #007bff !important;
+}
+
+/* Especificações */
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.spec-item {
+    padding: 8px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.specs-list {
+    list-style: none;
+    padding: 0;
+}
+
+.specs-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.specs-list li:last-child {
+    border-bottom: none;
+}
+
+.specs-list i {
+    color: #007bff;
+    margin-right: 0.5rem;
+}
+
+/* Breadcrumb */
+.breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+}
+
+/* Galeria de Produtos */
+.product-gallery {
+    position: relative;
+}
+
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.gallery-nav:hover {
+    background: rgba(0,0,0,0.7);
+}
+
+.gallery-nav.prev {
+    left: 10px;
+}
+
+.gallery-nav.next {
+    right: 10px;
+}
+
+/* Tags */
+.tags .badge {
+    font-size: 0.8rem;
+}
+
+/* Produtos Relacionados */
+.related-product-image {
+    height: 140px;
+    object-fit: contain;
+    background-color: #f8f9fa;
+}
