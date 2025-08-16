@@ -39,15 +39,17 @@ if (!$product) {
     <style>
         .product-image {
             max-height: 400px;
-            object-fit: cover;
+            object-fit: contain;
             width: 100%;
+            background-color: #f8f9fa;
         }
         .thumbnail {
             height: 80px;
-            object-fit: cover;
+            object-fit: contain;
             cursor: pointer;
             border: 2px solid transparent;
             transition: border-color 0.3s ease;
+            background-color: #f8f9fa;
         }
         .thumbnail.active {
             border-color: #007bff;
@@ -113,7 +115,45 @@ if (!$product) {
             transform: translateY(-2px);
         }
         .footer {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, rgb(9, 23, 87) 0%, rgb(64, 53, 75) 100%);
+        }
+        .payment-methods {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+        .payment-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 8px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.1);
+            font-size: 0.75rem;
+        }
+        .payment-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-1px);
+        }
+        .payment-item img {
+            width: 40px;
+            height: 25px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        .payment-item:hover img {
+            transform: scale(1.1);
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .text-blue {
+            color: #007bff !important;
         }
     </style>
 </head>
@@ -242,7 +282,7 @@ if (!$product) {
                     <?php foreach ($relatedProducts as $related): ?>
                     <div class="col-md-4 mb-4">
                         <div class="card h-100">
-                            <img src="<?= $related['images'][0] ?>" class="card-img-top" style="height: 200px; object-fit: cover;" alt="<?= $related['title'] ?>">
+                            <img src="<?= $related['images'][0] ?>" class="card-img-top" style="height: 180px; object-fit: contain; background-color: #f8f9fa;" alt="<?= $related['title'] ?>">
                             <div class="card-body">
                                 <h5 class="card-title"><?= $related['title'] ?></h5>
                                 <p class="card-text text-muted"><?= $related['short_description'] ?></p>
@@ -261,12 +301,38 @@ if (!$product) {
     <footer class="footer text-white py-4 mt-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <h5>TechStore</h5>
-                    <p class="text-muted">Sua loja de tecnologia de confiança</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <p class="text-muted">&copy; 2024 TechStore. Todos os direitos reservados.</p>
+                <div class="col-12 text-center">
+                    <h6 class="text-white mb-3">Formas de Pagamento</h6>
+                    <div class="payment-methods">
+                        <div class="payment-item">
+                            <img src="https://wx.mlcdn.com.br/site/desk/footer/payment-types/cartao-luiza.svg" alt="Cartões LuizaCred" width="40" height="25">
+                        </div>
+                        
+                        <div class="payment-item">
+                            <img src="https://wx.mlcdn.com.br/site/desk/footer/payment-types/boleto.svg" alt="Boleto Bancário" width="40" height="25">
+                        </div>
+                        <div class="payment-item">
+                            <img src="https://wx.mlcdn.com.br/site/desk/footer/payment-types/visa.svg" alt="Cartão Visa" width="40" height="25">
+                        </div>
+                        <div class="payment-item">
+                            <img src="https://wx.mlcdn.com.br/site/desk/footer/payment-types/mastercard.svg" alt="Cartão MasterCard" width="40" height="25">
+                        </div>
+                        <div class="payment-item">
+                            <img src="https://wx.mlcdn.com.br/site/desk/footer/payment-types/diners.svg" alt="Cartão Diners" width="40" height="25">
+                        </div>
+                        <div class="payment-item">
+                            <img src="https://wx.mlcdn.com.br/site/desk/footer/payment-types/hipercard.svg" alt="Cartão Hipercard" width="40" height="25">
+                        </div>
+                        <div class="payment-item">
+                            <img src="https://wx.mlcdn.com.br/site/desk/footer/payment-types/elo.svg" alt="Cartão Elo" width="40" height="25">
+                        </div>
+                        <div class="payment-item">
+                            <img src="https://wx.mlcdn.com.br/site/desk/footer/payment-types/aura.svg" alt="Cartão Aura" width="40" height="25">
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-white">&copy; 2024 TechStore. Todos os direitos reservados.</p>
+                    </div>
                 </div>
             </div>
         </div>
