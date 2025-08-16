@@ -7,9 +7,9 @@
       "full_description": "O Samsung Galaxy S23 é um smartphone premium com tela AMOLED de 6.1 polegadas, processador Snapdragon 8 Gen 2, 8GB de RAM e 128GB de armazenamento. Possui câmera traseira tripla com sensor principal de 50MP, câmera frontal de 12MP e bateria de 3900mAh com carregamento rápido de 25W.",
       "price": 3999.99,
       "images": [
-        "https://via.placeholder.com/400x400/007bff/ffffff?text=Galaxy+S23",
-        "https://via.placeholder.com/400x400/28a745/ffffff?text=Galaxy+S23+Back",
-        "https://via.placeholder.com/400x400/dc3545/ffffff?text=Galaxy+S23+Side"
+        "img/celular.webp",
+        "img/celular.webp",
+        "img/celular.webp"
       ],
       "category": "Smartphones"
     },
@@ -20,8 +20,8 @@
       "full_description": "Notebook Dell Inspiron 15 com tela de 15.6 polegadas Full HD, processador Intel Core i5-1135G7, 8GB de RAM DDR4, SSD de 256GB e placa de vídeo integrada Intel Iris Xe. Ideal para trabalho e estudos, com design elegante e bateria de longa duração.",
       "price": 2899.99,
       "images": [
-        "https://via.placeholder.com/400x400/6f42c1/ffffff?text=Dell+Inspiron",
-        "https://via.placeholder.com/400x400/fd7e14/ffffff?text=Dell+Inspiron+Back"
+        "img/notebook.avif",
+        "img/notebook.avif"
       ],
       "category": "Notebooks"
     },
@@ -32,8 +32,8 @@
       "full_description": "Fone de ouvido Sony WH-1000XM4 com cancelamento de ruído ativo de última geração, bateria de até 30 horas de reprodução, conectividade Bluetooth 5.0 e NFC. Possui controles de toque, assistente de voz integrado e design confortável para uso prolongado.",
       "price": 1299.99,
       "images": [
-        "https://via.placeholder.com/400x400/20c997/ffffff?text=Sony+WH-1000XM4",
-        "https://via.placeholder.com/400x400/e83e8c/ffffff?text=Sony+WH-1000XM4+Case"
+        "img/fone.jpg",
+        "img/fone.jpg"
       ],
       "category": "Áudio"
     },
@@ -44,8 +44,8 @@
       "full_description": "Smart TV LG 55 polegadas com resolução 4K Ultra HD, processador α7 Gen 5, webOS 6.0, HDR10 e Dolby Vision. Possui 4 portas HDMI, 2 portas USB, Wi-Fi e Bluetooth integrados. Compatível com Netflix, Prime Video e outros serviços de streaming.",
       "price": 2499.99,
       "images": [
-        "https://via.placeholder.com/400x400/17a2b8/ffffff?text=LG+TV+55",
-        "https://via.placeholder.com/400x400/6c757d/ffffff?text=LG+TV+Remote"
+        "img/tv.jpeg",
+        "img/tv.jpeg"
       ],
       "category": "TVs"
     },
@@ -56,8 +56,8 @@
       "full_description": "Câmera mirrorless Canon EOS R6 com sensor CMOS full-frame de 20.1MP, estabilização de imagem de 5 eixos, gravação 4K até 60fps e sistema de foco automático Dual Pixel CMOS AF II. Ideal para fotografia profissional e videografia.",
       "price": 8999.99,
       "images": [
-        "https://via.placeholder.com/400x400/ffc107/ffffff?text=Canon+EOS+R6",
-        "https://via.placeholder.com/400x400/343a40/ffffff?text=Canon+EOS+R6+Kit"
+        "img/camera.webp",
+        "img/camera.webp"
       ],
       "category": "Câmeras"
     },
@@ -68,8 +68,8 @@
       "full_description": "Console PlayStation 5 com processador AMD Zen 2, GPU AMD RDNA 2, SSD ultra-rápido de 825GB e suporte a ray tracing. Inclui controle DualSense com feedback háptico e gatilhos adaptativos. Compatível com jogos PS4 e PS5.",
       "price": 3499.99,
       "images": [
-        "https://via.placeholder.com/400x400/0d6efd/ffffff?text=PlayStation+5",
-        "https://via.placeholder.com/400x400/6610f2/ffffff?text=PS5+Controller"
+        "img/videogame.jpeg",
+        "img/videogame.jpeg"
       ],
       "category": "Games"
     }
