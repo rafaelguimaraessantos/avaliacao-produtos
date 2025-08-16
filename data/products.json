@@ -21,6 +21,7 @@
       "price": 2899.99,
       "images": [
         "img/notebook.avif",
+        "img/dellnotebook.webp",
         "img/notebook.avif"
       ],
       "category": "Notebooks"
@@ -33,6 +34,7 @@
       "price": 1299.99,
       "images": [
         "img/fone.jpg",
+        "img/fone2.jpg",
         "img/fone.jpg"
       ],
       "category": "Áudio"
@@ -44,7 +46,6 @@
       "full_description": "Smart TV LG 55 polegadas com resolução 4K Ultra HD, processador α7 Gen 5, webOS 6.0, HDR10 e Dolby Vision. Possui 4 portas HDMI, 2 portas USB, Wi-Fi e Bluetooth integrados. Compatível com Netflix, Prime Video e outros serviços de streaming.",
       "price": 2499.99,
       "images": [
-        "img/tv.jpeg",
         "img/tv.jpeg"
       ],
       "category": "TVs"
@@ -56,7 +57,6 @@
       "full_description": "Câmera mirrorless Canon EOS R6 com sensor CMOS full-frame de 20.1MP, estabilização de imagem de 5 eixos, gravação 4K até 60fps e sistema de foco automático Dual Pixel CMOS AF II. Ideal para fotografia profissional e videografia.",
       "price": 8999.99,
       "images": [
-        "img/camera.webp",
         "img/camera.webp"
       ],
       "category": "Câmeras"
@@ -68,7 +68,6 @@
       "full_description": "Console PlayStation 5 com processador AMD Zen 2, GPU AMD RDNA 2, SSD ultra-rápido de 825GB e suporte a ray tracing. Inclui controle DualSense com feedback háptico e gatilhos adaptativos. Compatível com jogos PS4 e PS5.",
       "price": 3499.99,
       "images": [
-        "img/videogame.jpeg",
         "img/videogame.jpeg"
       ],
       "category": "Games"
