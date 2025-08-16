@@ -31,9 +31,7 @@ $products = $data['products'];
             padding: 2rem 0;
             margin-bottom: 2rem;
         }
-        .navbar {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-        }
+
         .btn-primary {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             border: none;
@@ -88,7 +86,7 @@ $products = $data['products'];
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <h1 class="text-white text-center mb-4">Encontre os Melhores Produtos</h1>
+                    <h1 class="text-center mb-4 text-white" style="font-weight: bold;">Encontre os Melhores Produtos</h1>
                     <div class="input-group">
                         <span class="input-group-text bg-white border-0">
                             <i class="fas fa-search text-muted"></i>

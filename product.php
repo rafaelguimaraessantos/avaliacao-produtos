@@ -103,9 +103,7 @@ if (!$product) {
         .gallery-nav.next {
             right: 10px;
         }
-        .navbar {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-        }
+
         .btn-primary {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             border: none;
