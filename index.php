@@ -94,6 +94,28 @@ $products = $data['products'];
         .text-blue {
             color: #007bff !important;
         }
+        .current-price {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .original-price {
+            font-size: 0.9em;
+        }
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .spec-item {
+            padding: 8px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+        .tags .badge {
+            font-size: 0.8rem;
+        }
     </style>
 </head>
 <body>
@@ -148,16 +170,38 @@ $products = $data['products'];
 
         <div class="row" id="productsContainer">
             <?php foreach ($products as $product): ?>
-            <div class="col-lg-4 col-md-6 mb-4 product-item" data-title="<?= strtolower($product['title']) ?>" data-category="<?= strtolower($product['category']) ?>">
+            <div class="col-lg-4 col-md-6 mb-4 product-item" data-title="<?= strtolower($product['title']) ?>" data-category="<?= strtolower($product['category']['name']) ?>">
                 <div class="card product-card h-100">
                     <div class="position-relative">
-                        <img src="<?= $product['images'][0] ?>" class="card-img-top product-image" alt="<?= $product['title'] ?>">
-                        <span class="badge bg-primary category-badge"><?= $product['category'] ?></span>
+                        <img src="<?= $product['images'][0]['url'] ?>" class="card-img-top product-image" alt="<?= $product['images'][0]['alt'] ?>">
+                        <span class="badge bg-primary category-badge"><?= $product['category']['name'] ?></span>
+                        <?php if ($product['price']['discount_percentage'] > 0): ?>
+                        <span class="badge bg-danger position-absolute top-0 start-0 m-2">-<?= $product['price']['discount_percentage'] ?>%</span>
+                        <?php endif; ?>
                     </div>
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title"><?= $product['title'] ?></h5>
                         <p class="card-text text-muted"><?= $product['short_description'] ?></p>
-                        <div class="price mb-3">R$ <?= number_format($product['price'], 2, ',', '.') ?></div>
+                        <div class="price mb-3">
+                            <span class="current-price">R$ <?= number_format($product['price']['current'], 2, ',', '.') ?></span>
+                            <?php if ($product['price']['discount_percentage'] > 0): ?>
+                            <span class="original-price text-muted text-decoration-line-through ms-2">R$ <?= number_format($product['price']['original'], 2, ',', '.') ?></span>
+                            <?php endif; ?>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="rating">
+                                <i class="fas fa-star text-warning"></i>
+                                <span class="ms-1"><?= $product['ratings']['average'] ?></span>
+                                <span class="text-muted">(<?= $product['ratings']['total_reviews'] ?>)</span>
+                            </div>
+                            <div class="stock-status">
+                                <?php if ($product['stock']['quantity'] > 0): ?>
+                                <span class="badge bg-success">Em estoque</span>
+                                <?php else: ?>
+                                <span class="badge bg-secondary">Indisponível</span>
+                                <?php endif; ?>
+                            </div>
+                        </div>
                         <div class="mt-auto">
                             <a href="product.php?id=<?= $product['id'] ?>" class="btn btn-primary w-100">
                                 <i class="fas fa-eye me-2"></i>Ver Mais

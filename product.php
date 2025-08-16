@@ -155,6 +155,28 @@ if (!$product) {
         .text-blue {
             color: #007bff !important;
         }
+        .current-price {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .original-price {
+            font-size: 0.9em;
+        }
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .spec-item {
+            padding: 8px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+        .tags .badge {
+            font-size: 0.8rem;
+        }
     </style>
 </head>
 <body>
@@ -198,7 +220,7 @@ if (!$product) {
             <!-- Product Images -->
             <div class="col-lg-6 mb-4">
                 <div class="product-gallery">
-                    <img id="mainImage" src="<?= $product['images'][0] ?>" class="product-image rounded" alt="<?= $product['title'] ?>">
+                    <img id="mainImage" src="<?= $product['images'][0]['url'] ?>" class="product-image rounded" alt="<?= $product['images'][0]['alt'] ?>">
                     
                     <?php if (count($product['images']) > 1): ?>
                     <button class="gallery-nav prev" onclick="changeImage(-1)">
@@ -214,10 +236,10 @@ if (!$product) {
                 <div class="row mt-3">
                     <?php foreach ($product['images'] as $index => $image): ?>
                     <div class="col-3 mb-2">
-                        <img src="<?= $image ?>" 
+                        <img src="<?= $image['url'] ?>" 
                              class="thumbnail rounded <?= $index === 0 ? 'active' : '' ?>" 
                              onclick="selectImage(<?= $index ?>)"
-                             alt="<?= $product['title'] ?> - Imagem <?= $index + 1 ?>">
+                             alt="<?= $image['alt'] ?>">
                     </div>
                     <?php endforeach; ?>
                 </div>
@@ -227,19 +249,69 @@ if (!$product) {
             <!-- Product Info -->
             <div class="col-lg-6">
                 <div class="mb-3">
-                    <span class="badge bg-primary"><?= $product['category'] ?></span>
+                    <span class="badge bg-primary"><?= $product['category']['name'] ?></span>
+                    <?php if ($product['price']['discount_percentage'] > 0): ?>
+                    <span class="badge bg-danger ms-2">-<?= $product['price']['discount_percentage'] ?>% OFF</span>
+                    <?php endif; ?>
                 </div>
                 
                 <h1 class="mb-3"><?= $product['title'] ?></h1>
                 
                 <div class="price mb-4">
-                    R$ <?= number_format($product['price'], 2, ',', '.') ?>
+                    <span class="current-price fs-1">R$ <?= number_format($product['price']['current'], 2, ',', '.') ?></span>
+                    <?php if ($product['price']['discount_percentage'] > 0): ?>
+                    <div class="original-price text-muted text-decoration-line-through">R$ <?= number_format($product['price']['original'], 2, ',', '.') ?></div>
+                    <?php endif; ?>
+                </div>
+                
+                <div class="d-flex align-items-center mb-4">
+                    <div class="rating me-3">
+                        <i class="fas fa-star text-warning"></i>
+                        <span class="ms-1 fw-bold"><?= $product['ratings']['average'] ?></span>
+                        <span class="text-muted">(<?= $product['ratings']['total_reviews'] ?> avaliações)</span>
+                    </div>
+                    <div class="stock-status">
+                        <?php if ($product['stock']['quantity'] > 0): ?>
+                        <span class="badge bg-success">Em estoque (<?= $product['stock']['quantity'] ?> unidades)</span>
+                        <?php else: ?>
+                        <span class="badge bg-secondary">Indisponível</span>
+                        <?php endif; ?>
+                    </div>
                 </div>
                 
                 <div class="mb-4">
                     <h5>Descrição</h5>
                     <p class="text-muted"><?= $product['full_description'] ?></p>
                 </div>
+                
+                <!-- Especificações Técnicas -->
+                <div class="mb-4">
+                    <h5>Especificações Técnicas</h5>
+                    <div class="specs-grid">
+                        <?php foreach ($product['specifications'] as $key => $value): ?>
+                        <div class="spec-item">
+                            <strong><?= ucfirst(str_replace('_', ' ', $key)) ?>:</strong>
+                            <?php if (is_array($value)): ?>
+                                <?= implode(', ', $value) ?>
+                            <?php else: ?>
+                                <?= $value ?>
+                            <?php endif; ?>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+                
+                <!-- Tags -->
+                <?php if (!empty($product['tags'])): ?>
+                <div class="mb-4">
+                    <h6>Tags:</h6>
+                    <div class="tags">
+                        <?php foreach ($product['tags'] as $tag): ?>
+                        <span class="badge bg-light text-dark me-1"><?= $tag ?></span>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+                <?php endif; ?>
 
                 <!-- Action Buttons -->
                 <div class="d-grid gap-2 d-md-block mb-4">
@@ -274,7 +346,7 @@ if (!$product) {
                 <div class="row">
                     <?php 
                     $relatedProducts = array_filter($products, function($p) use ($product) {
-                        return $p['category'] === $product['category'] && $p['id'] !== $product['id'];
+                        return $p['category']['id'] === $product['category']['id'] && $p['id'] !== $product['id'];
                     });
                     $relatedProducts = array_slice($relatedProducts, 0, 3);
                     ?>
@@ -282,11 +354,16 @@ if (!$product) {
                     <?php foreach ($relatedProducts as $related): ?>
                     <div class="col-md-4 mb-4">
                         <div class="card h-100">
-                            <img src="<?= $related['images'][0] ?>" class="card-img-top" style="height: 180px; object-fit: contain; background-color: #f8f9fa;" alt="<?= $related['title'] ?>">
+                            <img src="<?= $related['images'][0]['url'] ?>" class="card-img-top" style="height: 180px; object-fit: contain; background-color: #f8f9fa;" alt="<?= $related['images'][0]['alt'] ?>">
                             <div class="card-body">
                                 <h5 class="card-title"><?= $related['title'] ?></h5>
                                 <p class="card-text text-muted"><?= $related['short_description'] ?></p>
-                                <div class="price mb-3">R$ <?= number_format($related['price'], 2, ',', '.') ?></div>
+                                <div class="price mb-3">
+                                    <span class="current-price">R$ <?= number_format($related['price']['current'], 2, ',', '.') ?></span>
+                                    <?php if ($related['price']['discount_percentage'] > 0): ?>
+                                    <span class="original-price text-muted text-decoration-line-through ms-2">R$ <?= number_format($related['price']['original'], 2, ',', '.') ?></span>
+                                    <?php endif; ?>
+                                </div>
                                 <a href="product.php?id=<?= $related['id'] ?>" class="btn btn-outline-primary">Ver Detalhes</a>
                             </div>
                         </div>
@@ -341,7 +418,7 @@ if (!$product) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         let currentImageIndex = 0;
-        const images = <?= json_encode($product['images']) ?>;
+        const images = <?= json_encode(array_column($product['images'], 'url')) ?>;
         const totalImages = images.length;
 
         function selectImage(index) {

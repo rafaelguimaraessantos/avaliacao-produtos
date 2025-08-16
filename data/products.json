@@ -1,76 +1,395 @@
 {
-  "products": [
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2024-08-16",
+    "total_products": 6,
+    "total_categories": 6
+  },
+  "categories": [
     {
       "id": 1,
-      "title": "Smartphone Galaxy S23",
-      "short_description": "Smartphone Samsung Galaxy S23 com câmera de 50MP",
-      "full_description": "O Samsung Galaxy S23 é um smartphone premium com tela AMOLED de 6.1 polegadas, processador Snapdragon 8 Gen 2, 8GB de RAM e 128GB de armazenamento. Possui câmera traseira tripla com sensor principal de 50MP, câmera frontal de 12MP e bateria de 3900mAh com carregamento rápido de 25W.",
-      "price": 3999.99,
-      "images": [
-        "img/celular.webp",
-        "img/s23.jpeg",
-        "img/celular.webp"
-      ],
-      "category": "Smartphones"
+      "name": "Smartphones",
+      "slug": "smartphones",
+      "description": "Smartphones e celulares de última geração"
     },
     {
       "id": 2,
-      "title": "Notebook Dell Inspiron",
-      "short_description": "Notebook Dell Inspiron com processador Intel i5",
-      "full_description": "Notebook Dell Inspiron 15 com tela de 15.6 polegadas Full HD, processador Intel Core i5-1135G7, 8GB de RAM DDR4, SSD de 256GB e placa de vídeo integrada Intel Iris Xe. Ideal para trabalho e estudos, com design elegante e bateria de longa duração.",
-      "price": 2899.99,
-      "images": [
-        "img/notebook.avif",
-        "img/dellnotebook.webp",
-        "img/notebook.avif"
-      ],
-      "category": "Notebooks"
+      "name": "Notebooks",
+      "slug": "notebooks",
+      "description": "Notebooks e laptops para trabalho e estudo"
     },
     {
       "id": 3,
-      "title": "Fone de Ouvido Sony WH-1000XM4",
-      "short_description": "Fone de ouvido sem fio com cancelamento de ruído",
-      "full_description": "Fone de ouvido Sony WH-1000XM4 com cancelamento de ruído ativo de última geração, bateria de até 30 horas de reprodução, conectividade Bluetooth 5.0 e NFC. Possui controles de toque, assistente de voz integrado e design confortável para uso prolongado.",
-      "price": 1299.99,
-      "images": [
-        "img/fone.jpg",
-        "img/fone2.jpg",
-        "img/fone.jpg"
-      ],
-      "category": "Áudio"
+      "name": "Áudio",
+      "slug": "audio",
+      "description": "Fones de ouvido e equipamentos de áudio"
     },
     {
       "id": 4,
-      "title": "Smart TV LG 55\" 4K",
-      "short_description": "Smart TV LG 55 polegadas com resolução 4K",
-      "full_description": "Smart TV LG 55 polegadas com resolução 4K Ultra HD, processador α7 Gen 5, webOS 6.0, HDR10 e Dolby Vision. Possui 4 portas HDMI, 2 portas USB, Wi-Fi e Bluetooth integrados. Compatível com Netflix, Prime Video e outros serviços de streaming.",
-      "price": 2499.99,
-      "images": [
-        "img/tv.jpeg"
-      ],
-      "category": "TVs"
+      "name": "TVs",
+      "slug": "tvs",
+      "description": "Smart TVs e televisores"
     },
     {
       "id": 5,
-      "title": "Câmera Canon EOS R6",
-      "short_description": "Câmera mirrorless Canon EOS R6 com sensor full-frame",
-      "full_description": "Câmera mirrorless Canon EOS R6 com sensor CMOS full-frame de 20.1MP, estabilização de imagem de 5 eixos, gravação 4K até 60fps e sistema de foco automático Dual Pixel CMOS AF II. Ideal para fotografia profissional e videografia.",
-      "price": 8999.99,
-      "images": [
-        "img/camera.webp"
-      ],
-      "category": "Câmeras"
+      "name": "Câmeras",
+      "slug": "cameras",
+      "description": "Câmeras fotográficas e equipamentos"
     },
     {
       "id": 6,
+      "name": "Games",
+      "slug": "games",
+      "description": "Consoles e jogos"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "sku": "SAMS23-001",
+      "title": "Smartphone Galaxy S23",
+      "slug": "smartphone-galaxy-s23",
+      "short_description": "Smartphone Samsung Galaxy S23 com câmera de 50MP",
+      "full_description": "O Samsung Galaxy S23 é um smartphone premium com tela AMOLED de 6.1 polegadas, processador Snapdragon 8 Gen 2, 8GB de RAM e 128GB de armazenamento. Possui câmera traseira tripla com sensor principal de 50MP, câmera frontal de 12MP e bateria de 3900mAh com carregamento rápido de 25W.",
+      "price": {
+        "current": 3999.99,
+        "original": 4499.99,
+        "currency": "BRL",
+        "discount_percentage": 11
+      },
+      "specifications": {
+        "brand": "Samsung",
+        "model": "Galaxy S23",
+        "color": "Preto",
+        "storage": "128GB",
+        "ram": "8GB",
+        "screen_size": "6.1\"",
+        "screen_type": "AMOLED",
+        "camera_main": "50MP",
+        "camera_front": "12MP",
+        "battery": "3900mAh",
+        "processor": "Snapdragon 8 Gen 2",
+        "os": "Android 13",
+        "connectivity": ["5G", "Wi-Fi 6", "Bluetooth 5.3"]
+      },
+      "images": [
+        {
+          "id": 1,
+          "url": "img/celular.webp",
+          "alt": "Galaxy S23 - Vista frontal",
+          "is_primary": true
+        },
+        {
+          "id": 2,
+          "url": "img/s23.jpeg",
+          "alt": "Galaxy S23 - Vista traseira",
+          "is_primary": false
+        },
+        {
+          "id": 3,
+          "url": "img/celular.webp",
+          "alt": "Galaxy S23 - Vista lateral",
+          "is_primary": false
+        }
+      ],
+      "category": {
+        "id": 1,
+        "name": "Smartphones",
+        "slug": "smartphones"
+      },
+      "stock": {
+        "quantity": 15,
+        "status": "in_stock"
+      },
+      "ratings": {
+        "average": 4.8,
+        "total_reviews": 127
+      },
+      "tags": ["smartphone", "samsung", "5g", "camera", "android"],
+      "created_at": "2024-08-16T10:00:00Z",
+      "updated_at": "2024-08-16T15:30:00Z"
+    },
+    {
+      "id": 2,
+      "sku": "DELLINSP-002",
+      "title": "Notebook Dell Inspiron",
+      "slug": "notebook-dell-inspiron",
+      "short_description": "Notebook Dell Inspiron com processador Intel i5",
+      "full_description": "Notebook Dell Inspiron 15 com tela de 15.6 polegadas Full HD, processador Intel Core i5-1135G7, 8GB de RAM DDR4, SSD de 256GB e placa de vídeo integrada Intel Iris Xe. Ideal para trabalho e estudos, com design elegante e bateria de longa duração.",
+      "price": {
+        "current": 2899.99,
+        "original": 3299.99,
+        "currency": "BRL",
+        "discount_percentage": 12
+      },
+      "specifications": {
+        "brand": "Dell",
+        "model": "Inspiron 15",
+        "color": "Prata",
+        "storage": "256GB SSD",
+        "ram": "8GB DDR4",
+        "screen_size": "15.6\"",
+        "screen_resolution": "Full HD (1920x1080)",
+        "processor": "Intel Core i5-1135G7",
+        "graphics": "Intel Iris Xe",
+        "os": "Windows 11",
+        "battery": "Até 8 horas",
+        "weight": "1.8kg"
+      },
+      "images": [
+        {
+          "id": 4,
+          "url": "img/notebook.avif",
+          "alt": "Dell Inspiron - Vista frontal",
+          "is_primary": true
+        },
+        {
+          "id": 5,
+          "url": "img/dellnotebook.webp",
+          "alt": "Dell Inspiron - Vista traseira",
+          "is_primary": false
+        },
+        {
+          "id": 6,
+          "url": "img/notebook.avif",
+          "alt": "Dell Inspiron - Vista lateral",
+          "is_primary": false
+        }
+      ],
+      "category": {
+        "id": 2,
+        "name": "Notebooks",
+        "slug": "notebooks"
+      },
+      "stock": {
+        "quantity": 8,
+        "status": "in_stock"
+      },
+      "ratings": {
+        "average": 4.6,
+        "total_reviews": 89
+      },
+      "tags": ["notebook", "dell", "intel", "windows", "ssd"],
+      "created_at": "2024-08-16T10:00:00Z",
+      "updated_at": "2024-08-16T15:30:00Z"
+    },
+    {
+      "id": 3,
+      "sku": "SONYWH-003",
+      "title": "Fone de Ouvido Sony WH-1000XM4",
+      "slug": "fone-sony-wh-1000xm4",
+      "short_description": "Fone de ouvido sem fio com cancelamento de ruído",
+      "full_description": "Fone de ouvido Sony WH-1000XM4 com cancelamento de ruído ativo de última geração, bateria de até 30 horas de reprodução, conectividade Bluetooth 5.0 e NFC. Possui controles de toque, assistente de voz integrado e design confortável para uso prolongado.",
+      "price": {
+        "current": 1299.99,
+        "original": 1599.99,
+        "currency": "BRL",
+        "discount_percentage": 19
+      },
+      "specifications": {
+        "brand": "Sony",
+        "model": "WH-1000XM4",
+        "color": "Preto",
+        "type": "Over-ear",
+        "connectivity": "Bluetooth 5.0",
+        "noise_cancellation": "Ativo",
+        "battery_life": "Até 30 horas",
+        "quick_charge": "10 min = 5 horas",
+        "weight": "254g",
+        "features": ["NFC", "Controles de toque", "Assistente de voz"]
+      },
+      "images": [
+        {
+          "id": 7,
+          "url": "img/fone.jpg",
+          "alt": "Sony WH-1000XM4 - Vista frontal",
+          "is_primary": true
+        },
+        {
+          "id": 8,
+          "url": "img/fone2.jpg",
+          "alt": "Sony WH-1000XM4 - Vista lateral",
+          "is_primary": false
+        },
+        {
+          "id": 9,
+          "url": "img/fone.jpg",
+          "alt": "Sony WH-1000XM4 - Vista superior",
+          "is_primary": false
+        }
+      ],
+      "category": {
+        "id": 3,
+        "name": "Áudio",
+        "slug": "audio"
+      },
+      "stock": {
+        "quantity": 22,
+        "status": "in_stock"
+      },
+      "ratings": {
+        "average": 4.9,
+        "total_reviews": 203
+      },
+      "tags": ["fone", "sony", "bluetooth", "noise-cancellation", "wireless"],
+      "created_at": "2024-08-16T10:00:00Z",
+      "updated_at": "2024-08-16T15:30:00Z"
+    },
+    {
+      "id": 4,
+      "sku": "LGTV55-004",
+      "title": "Smart TV LG 55\" 4K",
+      "slug": "smart-tv-lg-55-4k",
+      "short_description": "Smart TV LG 55 polegadas com resolução 4K",
+      "full_description": "Smart TV LG 55 polegadas com resolução 4K Ultra HD, processador α7 Gen 5, webOS 6.0, HDR10 e Dolby Vision. Possui 4 portas HDMI, 2 portas USB, Wi-Fi e Bluetooth integrados. Compatível com Netflix, Prime Video e outros serviços de streaming.",
+      "price": {
+        "current": 2499.99,
+        "original": 2999.99,
+        "currency": "BRL",
+        "discount_percentage": 17
+      },
+      "specifications": {
+        "brand": "LG",
+        "model": "55UN7300",
+        "color": "Preto",
+        "screen_size": "55\"",
+        "resolution": "4K Ultra HD (3840x2160)",
+        "processor": "α7 Gen 5",
+        "os": "webOS 6.0",
+        "hdr": ["HDR10", "Dolby Vision"],
+        "ports": {
+          "hdmi": 4,
+          "usb": 2
+        },
+        "connectivity": ["Wi-Fi", "Bluetooth", "Ethernet"],
+        "smart_features": ["Netflix", "Prime Video", "YouTube"]
+      },
+      "images": [
+        {
+          "id": 10,
+          "url": "img/tv.jpeg",
+          "alt": "LG Smart TV 55\" - Vista frontal",
+          "is_primary": true
+        }
+      ],
+      "category": {
+        "id": 4,
+        "name": "TVs",
+        "slug": "tvs"
+      },
+      "stock": {
+        "quantity": 12,
+        "status": "in_stock"
+      },
+      "ratings": {
+        "average": 4.7,
+        "total_reviews": 156
+      },
+      "tags": ["tv", "lg", "4k", "smart-tv", "hdr"],
+      "created_at": "2024-08-16T10:00:00Z",
+      "updated_at": "2024-08-16T15:30:00Z"
+    },
+    {
+      "id": 5,
+      "sku": "CANONR6-005",
+      "title": "Câmera Canon EOS R6",
+      "slug": "camera-canon-eos-r6",
+      "short_description": "Câmera mirrorless Canon EOS R6 com sensor full-frame",
+      "full_description": "Câmera mirrorless Canon EOS R6 com sensor CMOS full-frame de 20.1MP, estabilização de imagem de 5 eixos, gravação 4K até 60fps e sistema de foco automático Dual Pixel CMOS AF II. Ideal para fotografia profissional e videografia.",
+      "price": {
+        "current": 8999.99,
+        "original": 9999.99,
+        "currency": "BRL",
+        "discount_percentage": 10
+      },
+      "specifications": {
+        "brand": "Canon",
+        "model": "EOS R6",
+        "color": "Preto",
+        "sensor": "Full-frame CMOS",
+        "resolution": "20.1MP",
+        "video": "4K 60fps",
+        "stabilization": "5-axis IBIS",
+        "autofocus": "Dual Pixel CMOS AF II",
+        "mount": "RF",
+        "connectivity": ["Wi-Fi", "Bluetooth"],
+        "battery": "LP-E6NH"
+      },
+      "images": [
+        {
+          "id": 11,
+          "url": "img/camera.webp",
+          "alt": "Canon EOS R6 - Vista frontal",
+          "is_primary": true
+        }
+      ],
+      "category": {
+        "id": 5,
+        "name": "Câmeras",
+        "slug": "cameras"
+      },
+      "stock": {
+        "quantity": 5,
+        "status": "in_stock"
+      },
+      "ratings": {
+        "average": 4.9,
+        "total_reviews": 78
+      },
+      "tags": ["camera", "canon", "mirrorless", "full-frame", "4k"],
+      "created_at": "2024-08-16T10:00:00Z",
+      "updated_at": "2024-08-16T15:30:00Z"
+    },
+    {
+      "id": 6,
+      "sku": "PS5-006",
       "title": "Console PlayStation 5",
+      "slug": "console-playstation-5",
       "short_description": "Console PlayStation 5 com controle DualSense",
       "full_description": "Console PlayStation 5 com processador AMD Zen 2, GPU AMD RDNA 2, SSD ultra-rápido de 825GB e suporte a ray tracing. Inclui controle DualSense com feedback háptico e gatilhos adaptativos. Compatível com jogos PS4 e PS5.",
-      "price": 3499.99,
+      "price": {
+        "current": 3499.99,
+        "original": 3999.99,
+        "currency": "BRL",
+        "discount_percentage": 13
+      },
+      "specifications": {
+        "brand": "Sony",
+        "model": "PlayStation 5",
+        "color": "Branco",
+        "storage": "825GB SSD",
+        "processor": "AMD Zen 2",
+        "graphics": "AMD RDNA 2",
+        "ray_tracing": true,
+        "resolution": "4K",
+        "fps": "Até 120fps",
+        "included": ["Console PS5", "Controle DualSense", "Cabos"],
+        "connectivity": ["Wi-Fi 6", "Bluetooth 5.1", "Ethernet"]
+      },
       "images": [
-        "img/videogame.jpeg"
+        {
+          "id": 12,
+          "url": "img/videogame.jpeg",
+          "alt": "PlayStation 5 - Vista frontal",
+          "is_primary": true
+        }
       ],
-      "category": "Games"
+      "category": {
+        "id": 6,
+        "name": "Games",
+        "slug": "games"
+      },
+      "stock": {
+        "quantity": 3,
+        "status": "in_stock"
+      },
+      "ratings": {
+        "average": 4.8,
+        "total_reviews": 234
+      },
+      "tags": ["console", "playstation", "ps5", "gaming", "4k"],
+      "created_at": "2024-08-16T10:00:00Z",
+      "updated_at": "2024-08-16T15:30:00Z"
     }
   ]
 }
